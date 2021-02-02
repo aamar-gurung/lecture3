@@ -5,7 +5,7 @@ import rhino3dm from 'https://cdn.jsdelivr.net/npm/rhino3dm@0.15.0-beta/rhino3dm
 import { RhinoCompute } from 'https://cdn.jsdelivr.net/npm/compute-rhino3d@0.13.0-beta/compute.rhino3d.module.js'
 
 // reference the definition
-const definitionName = 'rnd_node.gh'
+const definitionName = 'jewellery.gh'
 
 // listen for slider change events
 const count_slider = document.getElementById( 'count' )
@@ -49,19 +49,37 @@ async function compute() {
     // collect data
 
     // get slider values
-    let count = document.getElementById('count').valueAsNumber
-    let radius = document.getElementById('radius').valueAsNumber
+    let radiusthickness = document.getElementById('radiusthickness').valueAsNumber
+    let ellipseradius1 = document.getElementById('ellipseradius1').valueAsNumber
+    let ellipseradius2 = document.getElementById('ellipseradius2').valueAsNumber
+    let thickness = document.getElementById('thickness').valueAsNumber
+    let ringradius = document.getElementById('ringradius').valueAsNumber
+    let framecount = document.getElementById('framecount').valueAsNumber
+
+
 
     // format data
-    let param1 = new RhinoCompute.Grasshopper.DataTree('RH_IN:radius')
-    param1.append([0], [radius])
-    let param2 = new RhinoCompute.Grasshopper.DataTree('RH_IN:count')
-    param2.append([0], [count])
+    let param1 = new RhinoCompute.Grasshopper.DataTree('RH_IN:radius1')
+    param1.append([0], [radiusthickness])
+    let param2 = new RhinoCompute.Grasshopper.DataTree('RH_IN:ellipse1')
+    param2.append([0], [ellipseradius1])
+    let param3 = new RhinoCompute.Grasshopper.DataTree('RH_IN:ellipse2')
+    param2.append([0], [ellipseradius2])
+    let param4 = new RhinoCompute.Grasshopper.DataTree('RH_IN:thickness')
+    param2.append([0], [thickness])
+    let param5 = new RhinoCompute.Grasshopper.DataTree('RH_IN:ring radius')
+    param2.append([0], [ringradius])
+    let param6 = new RhinoCompute.Grasshopper.DataTree('RH_IN:frame count')
+    param2.append([0], [framecount])
 
     // Add all params to an array
     let trees = []
     trees.push(param1)
     trees.push(param2)
+    trees.push(param3)
+    trees.push(param4)
+    trees.push(param5)
+    trees.push(param6)
 
     // Call RhinoCompute
 
