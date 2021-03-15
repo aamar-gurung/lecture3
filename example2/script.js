@@ -8,10 +8,19 @@ import { RhinoCompute } from 'https://cdn.jsdelivr.net/npm/compute-rhino3d@0.13.
 const definitionName = 'jewellery.gh'
 
 // listen for slider change events
-const count_slider = document.getElementById( 'count' )
-count_slider.addEventListener( 'input', onSliderChange, false )
-const radius_slider = document.getElementById( 'radius' )
-radius_slider.addEventListener( 'input', onSliderChange, false )
+const radiusthickness_slider = document.getElementById( 'radiusthickness' )
+radiusthickness_slider.addEventListener( 'input', onSliderChange, false )
+const ellipseradius1_slider = document.getElementById( 'ellipseradius1' )
+ellipseradius1_slider.addEventListener( 'input', onSliderChange, false )
+const ellipseradius2_slider = document.getElementById( 'ellipseradius2' )
+ellipseradius2_slider.addEventListener( 'input', onSliderChange, false )
+const thickness_slider = document.getElementById( 'thickness' )
+thickness_slider.addEventListener( 'input', onSliderChange, false )
+const ringradius_slider = document.getElementById( 'ringradius' )
+ringradius_slider.addEventListener( 'input', onSliderChange, false )
+const framecount_slider = document.getElementById( 'framecount' )
+framecount_slider.addEventListener( 'input', onSliderChange, false )
+
 
 const downloadButton = document.getElementById("downloadButton")
 downloadButton.onclick = download
