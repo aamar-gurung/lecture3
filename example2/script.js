@@ -10,8 +10,8 @@ const definitionName = 'Spheres.gh'
 // listen for slider change events
 const count_slider = document.getElementById( 'count' )
 count_slider.addEventListener( 'input', onSliderChange, false )
-const size_slider = document.getElementById( 'size' )
-size_slider.addEventListener( 'input', onSliderChange, false )
+const radius_slider = document.getElementById( 'radius' )
+radius_slider.addEventListener( 'input', onSliderChange, false )
 
 const downloadButton = document.getElementById("downloadButton")
 downloadButton.onclick = download
@@ -50,12 +50,12 @@ async function compute() {
 
     // get slider values
     let count = document.getElementById('count').valueAsNumber
-    let size = document.getElementById('size').valueAsNumber
+    let radius = document.getElementById('size').valueAsNumber
 
     // format data
-    let param1 = new RhinoCompute.Grasshopper.DataTree('RH_IN:size')
+    let param1 = new RhinoCompute.Grasshopper.DataTree('RH_IN:count')
     param1.append([0], [radius])
-    let param2 = new RhinoCompute.Grasshopper.DataTree('RH_IN:count')
+    let param2 = new RhinoCompute.Grasshopper.DataTree('RH_IN:radius')
     param2.append([0], [count])
 
     // Add all params to an array
