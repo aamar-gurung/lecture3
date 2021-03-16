@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="data:;base64,=">
-		<title>S1 - Lecture 3 - Example 2</title>
+		<title>Spheres</title>
 		<style>
 			body { 
                 margin: 0;
@@ -36,16 +36,12 @@
 	<body>
         <div id="loader"></div>
         <div>
-            <input type="range" id="ring" name="ring" min="360" max="400" value="400" step="1">
-            <label for="ring">ring</label>
+            <input type="range" id="count" name="count" min="1" max="50" value="20" step="1">
+            <label for="count">count</label>
         </div>
         <div>
-            <input type="range" id="Loweroffset" name="Loweroffset" min="1" max="30" value="1" step="1">
-            <label for="Loweroffset">Loweroffset</label>
-        </div>
-        <div>
-            <input type="range" id="Upperoffset" name="Upperoffset" min="1" max="40" value="29" step="1">
-            <label for="Upperoffset">Upperoffset</label>
+            <input type="range" id="size" name="size" min="1" max="5" value="1" step="1">
+            <label for="size">size</label>
         </div>
         <button id="downloadButton" disabled>Download</button>
         <script type="module" src="./script.js"></script>

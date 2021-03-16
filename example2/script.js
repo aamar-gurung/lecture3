@@ -5,16 +5,13 @@ import rhino3dm from 'https://cdn.jsdelivr.net/npm/rhino3dm@0.15.0-beta/rhino3dm
 import { RhinoCompute } from 'https://cdn.jsdelivr.net/npm/compute-rhino3d@0.13.0-beta/compute.rhino3d.module.js'
 
 // reference the definition
-const definitionName = 'Ring.gh'
+const definitionName = 'Spheres.gh'
 
 // listen for slider change events
-const ring_slider = document.getElementById( 'ring' )
-ring_slider.addEventListener( 'input', onSliderChange, false )
-const Loweroffset_slider = document.getElementById( 'Loweroffset' )
-Loweroffset_slider.addEventListener( 'input', onSliderChange, false )
-const Upperoffset_slider = document.getElementById( 'Upperoffset' )
-Upperoffset_slider.addEventListener( 'input', onSliderChange, false )
-
+const count_slider = document.getElementById( 'count' )
+count_slider.addEventListener( 'input', onSliderChange, false )
+const size_slider = document.getElementById( 'size' )
+size_slider.addEventListener( 'input', onSliderChange, false )
 
 const downloadButton = document.getElementById("downloadButton")
 downloadButton.onclick = download
@@ -52,26 +49,19 @@ async function compute() {
     // collect data
 
     // get slider values
-    let ring = document.getElementById('ring').valueAsNumber
-    let Loweroffset = document.getElementById('loweroffset').valueAsNumber
-    let Upperoffset = document.getElementById('Upperoffset').valueAsNumber
-  
+    let count = document.getElementById('count').valueAsNumber
+    let size = document.getElementById('size').valueAsNumber
 
     // format data
-    let param1 = new RhinoCompute.Grasshopper.DataTree('RH_IN:ring')
-    param1.append([0], [ring])
-    let param2 = new RhinoCompute.Grasshopper.DataTree('RH_IN:Loweroffset')
-    param2.append([0], [Loweroffset])
-    let param3 = new RhinoCompute.Grasshopper.DataTree('RH_IN:Upperoffset')
-    param3.append([0], [Upperoffset])
-
+    let param1 = new RhinoCompute.Grasshopper.DataTree('RH_IN:size')
+    param1.append([0], [radius])
+    let param2 = new RhinoCompute.Grasshopper.DataTree('RH_IN:count')
+    param2.append([0], [count])
 
     // Add all params to an array
     let trees = []
     trees.push(param1)
     trees.push(param2)
-    trees.push(param3)
- 
 
     // Call RhinoCompute
 
