@@ -36,31 +36,17 @@
 	<body>
         <div id="loader"></div>
         <div>
-            <input type="range" id="radiusthickness" name="radiusthickness" min="0" max="1" value=".50" step=".1">
-            <label for="radiusthickness">Radius thickness</label>
+            <input type="range" id="ring" name="ring" min="360" max="400" value="400" step="1">
+            <label for="ring">ring</label>
         </div>
         <div>
-            <input type="range" id="ellipseradius1" name="ellipseradius1" min="0" max="10" value="9" step="1">
-            <label for="ellipseradius1">Ellipse radius 1</label>
+            <input type="range" id="Loweroffset" name="Loweroffset" min="0" max="30" value="0" step="1">
+            <label for="Loweroffset">Loweroffset</label>
         </div>
         <div>
-            <input type="range" id="ellipseradius2" name="ellipseradius2" min="0" max="25" value="21" step="1">
-            <label for="ellipseradius2">Ellipse radius 2</label>
+            <input type="range" id="Upperoffset" name="Upperoffset" min="1" max="40" value="29" step="1">
+            <label for="Upperoffset">Upperoffset</label>
         </div>
-        <div>
-            <input type="range" id="thickness" name="thickness" min="0" max="10" value="9" step="1">
-            <label for="thickness">Thickness</label>
-        </div>
-        <div>
-            <input type="range" id="ringradius" name="ringradius" min="0" max="35" value="34" step="1">
-            <label for="ringradius">Ring radius</label>
-        </div>
-        <div>
-            <input type="range" id="framecount" name="framecount" min="0" max="20" value="20" step="1">
-            <label for="framecount">Frame count</label>
-        </div>
-
-        
         <button id="downloadButton" disabled>Download</button>
         <script type="module" src="./script.js"></script>
 	</body>

@@ -5,21 +5,15 @@ import rhino3dm from 'https://cdn.jsdelivr.net/npm/rhino3dm@0.15.0-beta/rhino3dm
 import { RhinoCompute } from 'https://cdn.jsdelivr.net/npm/compute-rhino3d@0.13.0-beta/compute.rhino3d.module.js'
 
 // reference the definition
-const definitionName = 'jewellery.gh'
+const definitionName = 'Ring.gh'
 
 // listen for slider change events
-const radiusthickness_slider = document.getElementById( 'radiusthickness' )
-radiusthickness_slider.addEventListener( 'input', onSliderChange, false )
-const ellipseradius1_slider = document.getElementById( 'ellipseradius1' )
-ellipseradius1_slider.addEventListener( 'input', onSliderChange, false )
-const ellipseradius2_slider = document.getElementById( 'ellipseradius2' )
-ellipseradius2_slider.addEventListener( 'input', onSliderChange, false )
-const thickness_slider = document.getElementById( 'thickness' )
-thickness_slider.addEventListener( 'input', onSliderChange, false )
-const ringradius_slider = document.getElementById( 'ringradius' )
-ringradius_slider.addEventListener( 'input', onSliderChange, false )
-const framecount_slider = document.getElementById( 'framecount' )
-framecount_slider.addEventListener( 'input', onSliderChange, false )
+const ring_slider = document.getElementById( 'ring' )
+ring_slider.addEventListener( 'input', onSliderChange, false )
+const Loweroffset_slider = document.getElementById( 'Loweroffset' )
+Loweroffset_slider.addEventListener( 'input', onSliderChange, false )
+const Upperoffset_slider = document.getElementById( 'Upperoffset' )
+Upperoffset_slider.addEventListener( 'input', onSliderChange, false )
 
 
 const downloadButton = document.getElementById("downloadButton")
@@ -58,37 +52,26 @@ async function compute() {
     // collect data
 
     // get slider values
-    let radiusthickness = document.getElementById('radiusthickness').valueAsNumber
-    let ellipseradius1 = document.getElementById('ellipseradius1').valueAsNumber
-    let ellipseradius2 = document.getElementById('ellipseradius2').valueAsNumber
-    let thickness = document.getElementById('thickness').valueAsNumber
-    let ringradius = document.getElementById('ringradius').valueAsNumber
-    let framecount = document.getElementById('framecount').valueAsNumber
-
-
+    let ring = document.getElementById('ring').valueAsNumber
+    let Loweroffset = document.getElementById('loweroffset').valueAsNumber
+    let Upperoffset = document.getElementById('Upperoffset').valueAsNumber
+  
 
     // format data
-    let param1 = new RhinoCompute.Grasshopper.DataTree('RH_IN:radius1')
-    param1.append([0], [radiusthickness])
-    let param2 = new RhinoCompute.Grasshopper.DataTree('RH_IN:ellipse1')
-    param2.append([0], [ellipseradius1])
-    let param3 = new RhinoCompute.Grasshopper.DataTree('RH_IN:ellipse2')
-    param2.append([0], [ellipseradius2])
-    let param4 = new RhinoCompute.Grasshopper.DataTree('RH_IN:thickness')
-    param2.append([0], [thickness])
-    let param5 = new RhinoCompute.Grasshopper.DataTree('RH_IN:ring radius')
-    param2.append([0], [ringradius])
-    let param6 = new RhinoCompute.Grasshopper.DataTree('RH_IN:frame count')
-    param2.append([0], [framecount])
+    let param1 = new RhinoCompute.Grasshopper.DataTree('RH_IN:ring')
+    param1.append([0], [ring])
+    let param2 = new RhinoCompute.Grasshopper.DataTree('RH_IN:Loweroffset')
+    param2.append([0], [Loweroffset])
+    let param3 = new RhinoCompute.Grasshopper.DataTree('RH_IN:Upperoffset')
+    param3.append([0], [Upperoffset])
+
 
     // Add all params to an array
     let trees = []
     trees.push(param1)
     trees.push(param2)
     trees.push(param3)
-    trees.push(param4)
-    trees.push(param5)
-    trees.push(param6)
+ 
 
     // Call RhinoCompute
 
