@@ -11,7 +11,10 @@
                 font-family: sans-serif;
             }
 
-            input { width: 80%; }
+            input { width: 30%; }
+            #container {position: relative;}
+            #container canvas, #overlay { position: absolute;}
+            #overlay {z-index: 1; width: 100%}
 
 			/* CSS for a spinning animation */ 
 			#loader {
