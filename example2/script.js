@@ -50,13 +50,13 @@ async function compute() {
 
     // get slider values
     let count = document.getElementById('count').valueAsNumber
-    let radius = document.getElementById('size').valueAsNumber
+    let radius = document.getElementById('radius').valueAsNumber
 
     // format data
     let param1 = new RhinoCompute.Grasshopper.DataTree('RH_IN:count')
-    param1.append([0], [radius])
+    param1.append([0], [count])
     let param2 = new RhinoCompute.Grasshopper.DataTree('RH_IN:radius')
-    param2.append([0], [count])
+    param2.append([0], [radius])
 
     // Add all params to an array
     let trees = []
