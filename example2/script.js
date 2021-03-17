@@ -27,7 +27,7 @@ rhino3dm().then(async m => {
     rhino = m
 
     // local 
-    //RhinoCompute.url = 'http://localhost:8081/' // Rhino.Compute server url
+    RhinoCompute.url = 'http://localhost:8081/' // Rhino.Compute server url
 
     // remote
     RhinoCompute.url = 'https://macad2021.compute.rhino3d.com/'
